@@ -5,7 +5,6 @@ import {LayoutContentNav}    from '../components/layout-content-nav';
 import {PrerenderedMarkdown} from '../components/markdown';
 import {SEO}                 from '../components/seo';
 
-
 // eslint-disable-next-line arca/no-default-export
 export default function Template({data, pageContext: {category}}) {
   const {allMarkdownRemark, markdownRemark} = data;

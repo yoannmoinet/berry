@@ -35,6 +35,14 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-algolia-docsearch`,
+      options: {
+        apiKey: `029f65f2c00301615fd14958b67d6730`,
+        indexName: `yarnpkg_next`,
+        inputSelector: `.docsearch`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [{
@@ -99,4 +107,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};

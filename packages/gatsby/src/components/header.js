@@ -148,6 +148,41 @@ const MenuNavigation = styled.div`
   }
 `;
 
+const MenuSearchBox = styled.div`
+  display: none;
+
+  margin-left: auto;
+  margin-right: 0;
+
+  padding: 0 1em;
+
+  ${props => props.type} {
+    display: flex;
+  }
+
+  ${ifMobile} {
+    width: 100%;
+  }
+
+  > * {
+    display: flex;
+
+    margin: auto;
+    margin-right: 0;
+  }
+
+  .docsearch {
+    width: 300px;
+    height: 3em;
+
+    border: 1px solid lightgrey;
+
+    padding: 0 1em;
+
+    font-size: 1em;
+  }
+`;
+
 const MenuEntry = styled.div`
   ${ifDesktop} {
     &:hover {
@@ -229,6 +264,9 @@ export const Header = ({children}) => {
           <MenuLogo to={`/`}>
             <Logo height={`3em`} align={`middle`} />
           </MenuLogo>
+          <MenuSearchBox type={ifMobile}>
+            <input className={`docsearch`} placeholder={`Search the documentation`}/>
+          </MenuSearchBox>
           <MenuToggle onClick={() => setExpanded(!expanded)}>
             {expanded ? `×` : `≡`}
           </MenuToggle>
@@ -243,6 +281,10 @@ export const Header = ({children}) => {
             </MenuEntry>
           </React.Fragment>)}
         </MenuNavigation>
+
+        <MenuSearchBox type={ifDesktop}>
+          <input className={`docsearch`} placeholder={`Search the documentation`} />
+        </MenuSearchBox>
       </MenuContainer>
       {children}
     </HeaderContainer>
